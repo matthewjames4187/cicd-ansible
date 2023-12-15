@@ -2,8 +2,12 @@
 - hosts: all
   become: yes
   remote_user: ubuntu
-  
+
   tasks:
+  - name: Update OS
+    apt:
+      update_cache: yes
+
   - name: Install Nginx
     apt:
       name: nginx
